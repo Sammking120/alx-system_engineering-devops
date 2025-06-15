@@ -32,4 +32,6 @@ Adds 128 to the value stored in the environment variable TRUEKNOWLEDGE and print
 ## 9-divide_and_rule.sh
 Divides the value of the environment variable POWER by the value of DIVIDE and prints the result.
 
+## 10-love_exponent_breath.sh
+Prints the result of raising the value of BREATH to the power of LOVE using Bash arithmetic.
 
