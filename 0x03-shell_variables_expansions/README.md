@@ -35,3 +35,6 @@ Divides the value of the environment variable POWER by the value of DIVIDE and p
 ## 10-love_exponent_breath.sh
 Prints the result of raising the value of BREATH to the power of LOVE using Bash arithmetic.
 
+## 11-binary_to_decimal.sh
+Converts the binary number stored in the BINARY environment variable to decimal and prints it.
+
