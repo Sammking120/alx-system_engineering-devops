@@ -26,3 +26,10 @@ Creates a new global (environment) variable named BEST with the value "School" u
 
 ## 8-true_knowledge.sh
 Adds 128 to the value stored in the environment variable TRUEKNOWLEDGE and prints the result.
+        ${TRUEKNOWLEDGE:-0} means:
+                Use the value of TRUEKNOWLEDGE, but if it's unset, use 0.
+
+## 9-divide_and_rule.sh
+Divides the value of the environment variable POWER by the value of DIVIDE and prints the result.
+
+
