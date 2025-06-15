@@ -20,3 +20,7 @@ Displays all local variables, environment variables, and shell functions using t
 
 ## 6-create_local_variable.sh
 Creates a new local variable named BEST with the value "School".
+
+## 7-create_global_variable.sh
+Creates a new global (environment) variable named BEST with the value "School" using export.
+
