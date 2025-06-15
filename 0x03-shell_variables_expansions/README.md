@@ -38,3 +38,5 @@ Prints the result of raising the value of BREATH to the power of LOVE using Bash
 ## 11-binary_to_decimal.sh
 Converts the binary number stored in the BINARY environment variable to decimal and prints it.
 
+## 12-combinations.sh
+Prints all combinations of two lowercase letters from 'aa' to 'zz', excluding 'oo'.
