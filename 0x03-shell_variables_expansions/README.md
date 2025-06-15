@@ -40,3 +40,6 @@ Converts the binary number stored in the BINARY environment variable to decimal 
 
 ## 12-combinations.sh
 Prints all combinations of two lowercase letters from 'aa' to 'zz', excluding 'oo'.
+
+## print_number.sh
+Prints the value of the NUM environment variable formatted to two decimal places.
