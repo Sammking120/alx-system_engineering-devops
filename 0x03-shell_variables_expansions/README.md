@@ -24,3 +24,5 @@ Creates a new local variable named BEST with the value "School".
 ## 7-create_global_variable.sh
 Creates a new global (environment) variable named BEST with the value "School" using export.
 
+## 8-true_knowledge.sh
+Adds 128 to the value stored in the environment variable TRUEKNOWLEDGE and prints the result.
