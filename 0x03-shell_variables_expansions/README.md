@@ -17,3 +17,6 @@ Lists all the environment (global) variables using the printenv command.
 
 ## 5-local_variables.sh
 Displays all local variables, environment variables, and shell functions using the set command.
+
+## 6-create_local_variable.sh
+Creates a new local variable named BEST with the value "School".
