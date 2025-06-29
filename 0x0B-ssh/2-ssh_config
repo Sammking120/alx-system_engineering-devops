@@ -1,5 +1,6 @@
+# Configuration for ALX School Server 
 Host myserver
-  HostName 44.204.0.219
-  User ubuntu
-  IdentityFile ~/.ssh/school
-  PasswordAuthentication no
+    HostName 44.204.0.219
+    User ubuntu
+    IdentityFile ~/.ssh/school
+    PasswordAuthentication no
