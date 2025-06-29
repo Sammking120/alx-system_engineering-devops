@@ -1,14 +1,14 @@
 # Puppet script to create ssh config file
 
 file { '/home/sammking/.ssh/config':
-  ensure  => file,
-  owner   => 'sammking',
-  group   => 'sammking',
-  mode    => '0600',
-  content => "Host myserver
-  HostName your.server.ip.address
-  User ubuntu
-  IdentityFile ~/.ssh/school
-  PasswordAuthentication no
+    ensure  => file,
+    owner   => 'sammking',
+    group   => 'sammking',
+    mode    => '0600',
+    content => "Host myserver
+    HostName 44.204.0.219
+    User ubuntu
+  I dentityFile ~/.ssh/school
+    PasswordAuthentication no
 ",
 }
