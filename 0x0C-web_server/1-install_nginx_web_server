@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Update package list and install nginx with -y flag
+apt-get update -y
+apt-get install nginx -y
+
+# Create a simple HTML page with "Hello World!"
+echo "Hello World!" > /var/www/html/index.html
+
+# Ensure nginx is configured to listen on port 80 (default configuration is fine)
+# No changes needed to default nginx config for this requirement
+
+# Restart nginx without using systemctl
+service nginx restart
