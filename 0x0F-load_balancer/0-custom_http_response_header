@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# This script installs nginx and adds a custom HTTP response header with the server's hostname
 # Install nginx if not installed
 apt-get update -y
 apt-get install nginx -y
