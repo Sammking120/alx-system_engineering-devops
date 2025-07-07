@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#!/usr/bin/env bash
 # Update package list and install nginx with -y flag
 apt-get update -y
 apt-get install nginx -y
