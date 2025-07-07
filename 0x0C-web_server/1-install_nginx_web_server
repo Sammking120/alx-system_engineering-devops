@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# This script installs nginx web server and creates a simple HTML page with "Hello World!"
 # Update package list and install nginx with -y flag
 apt-get update -y
 apt-get install nginx -y
