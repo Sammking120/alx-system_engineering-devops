@@ -1,30 +1,11 @@
 #!/usr/bin/env bash
-# Installs, configures, and starts the server
-apt-get update
-ufw allow 'Nginx HTTP'
-apt-get -y install nginx
-echo 'Hello World!' > /var/www/html/index.html
-chmod -R 755 /var/www/html
+# Install nginx if not installed
+apt-get update -y
+apt-get install nginx -y
 
-SERVER_CONFIG="
-server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
-    root /var/www/html;
-    index index.html index.htm index.nginx-debian.html;
-    server_name _;
-    location / {
-        try_files \$uri \$uri/ =404;
-    }
-    location /redirect_me {
-        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
-    }
-}"
+# Add redirect rule inside the default server block using sed
+# This inserts a location block for /redirect_me before the closing brace of the server block
+sed -i '/^\s*server\s*{/,/^\s*}/s|^\(\s*\)\(}\)|\1    location /redirect_me {\n\1        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\1    }\n\1\2|' /etc/nginx/sites-available/default
 
-echo "$SERVER_CONFIG" > /etc/nginx/sites-enabled/default
-
-if pgrep -x "nginx" >/dev/null; then
-    sudo service nginx restart
-else
-    sudo service nginx start
-fi
+# Restart nginx using service
+service nginx restart
