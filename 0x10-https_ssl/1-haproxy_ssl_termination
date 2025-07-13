@@ -1,4 +1,4 @@
-
+#!/usr/bin/env bash
 # Install HAProxy and Certbot for SSL termination
 # This script assumes you are running on a Debian-based system (like Ubuntu)
 sudo apt update
