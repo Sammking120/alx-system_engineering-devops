@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # /etc/ufw/before.rules
 
 *nat
