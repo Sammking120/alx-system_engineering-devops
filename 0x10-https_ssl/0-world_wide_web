@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+# Function to fetch subdomain info
+
+get_subdomain_info() {
+    local domain=$1
+    local sub=$2
+    local fqdn="${sub}.${domain}"
+
+    # Query the DNS record
+    record=$(dig +short ${fqdn} | head -n 1)
+    record_type=$(dig ${fqdn} ANY +short | awk '{print $2}' | head -n 1)
+
+    if [[ -z "$record" ]]; then
+        echo "No DNS record found for ${fqdn}"
+    else
+        echo "The subdomain ${sub} is a ${record_type} record and points to ${record}"
+    fi
+}
+
+# Main logic
+domain=$1
+subdomain=$2
+
+if [[ -z "$domain" ]]; then
+    echo "Usage: $0 domain [subdomain]"
+    exit 1
+fi
+
+if [[ -n "$subdomain" ]]; then
+    get_subdomain_info "$domain" "$subdomain"
+else
+    for sub in www lb-01 web-01 web-02; do
+        get_subdomain_info "$domain" "$sub"
+    done
+fi
