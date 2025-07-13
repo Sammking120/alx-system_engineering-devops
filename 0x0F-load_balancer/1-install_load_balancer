@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+# 1-install_load_balancer.sh
+# Automates the installation and configuration of HAProxy on lb-01
+
+# Update and install HAProxy
+apt-get update -y
+apt-get install -y haproxy
+
+# Backup original config
+cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.bak
+
+# Configure HAProxy (replace with your actual private IPs of web-01 and web-02)
+cat <<EOF > /etc/haproxy/haproxy.cfg
+global
+    log /dev/log    local0
+    log /dev/log    local1 notice
+    chroot /var/lib/haproxy
+    stats timeout 30s
+    user haproxy
+    group haproxy
+    daemon
+
+defaults
+    log     global
+    mode    http
+    option  httplog
+    option  dontlognull
+    timeout connect 5s
+    timeout client  50s
+    timeout server  50s
+
+frontend http_front
+    bind *:80
+    default_backend http_back
+
+backend http_back
+    balance roundrobin
+    option httpchk
+    server web-01 <WEB_01_PRIVATE_IP>:80 check
+    server web-02 <WEB_02_PRIVATE_IP>:80 check
+EOF
+
+# Enable and start HAProxy
+systemctl enable haproxy
+systemctl restart haproxy
+
+echo "HAProxy installation and configuration completed."
